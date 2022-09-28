@@ -1,0 +1,9 @@
+name: reality_defender
+
+dependencies:
+  - pandas
+  - numpy
+  - scipy
+  - matplotlib
+  - pillow
+  - tensorflow
