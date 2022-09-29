@@ -14,7 +14,7 @@ def create_model(
     trainable: bool = False
 ):
     """
-    Creates and loads the Resnet50 model we will use for our experiments.
+    Creates and loads the model we will use for our experiments.
     Depending on the `weights` parameter, this function will return one of
     two possible keras models:
         1. weights='imagenet': Returns a model ready for performing finetuning
@@ -82,10 +82,10 @@ def create_model(
             x = input
 
         # Add a layer for preprocessing the input images values
-        x = keras.applications.resnet50.preprocess_input(x)
+        x = keras.applications.mobilenet_v2.preprocess_input(x)
 
         # Create the corresponding core model
-        core_model = keras.applications.ResNet50(
+        core_model = keras.applications.MobileNetV2(
             weights=weights,
             include_top=False,
             pooling='avg'

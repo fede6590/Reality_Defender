@@ -44,11 +44,11 @@ fit:
     callbacks:
         model_checkpoint: # hd or hdf5: https://www.tensorflow.org/tutorials/keras/save_and_load
             # filepath: "/home/app/src/experiments/files/exp_000/model.{epoch:02d}-{val_loss:.4f}.h5"
-            filepath: "/model/weights/model.better.h5"
+            filepath: "model/weights/model.better.h5"
             save_best_only: True
         early_stopping: 
             monitor: 'val_loss'
             patience: 2
             restore_best_weights: True
         tensor_board:
-            log_dir: "/model/weights/logs"
+            log_dir: "model/weights/logs"

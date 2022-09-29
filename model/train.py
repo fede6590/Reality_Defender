@@ -13,11 +13,11 @@ import utils
 
 # Prevent tensorflow to allocate the entire GPU
 # https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth
-# physical_devices = tf.config.list_physical_devices("GPU")
-# try:
-#     tf.config.experimental.set_memory_growth(physical_devices[0], True)
-# except:
-#     pass
+physical_devices = tf.config.list_physical_devices("GPU")
+try:
+    tf.config.experimental.set_memory_growth(physical_devices[0], True)
+except:
+    pass
 
 # Supported optimizer algorithms
 OPTIMIZERS = {
@@ -126,7 +126,7 @@ def main(config_file):
         **config["data"],
     )
 
-    # Creates a Resnet50 model for finetuning
+    # Creates a model for finetuning
     cnn_model = model.create_model(**config["model"])
     print(cnn_model.summary())
 
