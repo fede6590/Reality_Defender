@@ -1,4 +1,4 @@
-name: reality_defender
+name: rd_env
 
 dependencies:
   - pandas

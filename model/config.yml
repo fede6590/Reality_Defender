@@ -2,6 +2,7 @@ seed: 21
 
 data:
     directory: "data/subset"
+    directory_bis: "../data/subset"
     test_dataset: "../data/rd_test_dataset"
     labels: "inferred"
     label_mode: "categorical"

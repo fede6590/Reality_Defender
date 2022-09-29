@@ -109,19 +109,17 @@ def predict_from_folder(folder, model, input_size, class_names):
             - labels: is the list of the true labels, we will use them to
                       compare against model predictions.
     """
-
+    filename = []
     predictions = []
-    labels = []
 
     for path, img in  walkdir(folder):
         img = os.path.join(path, img)
+        filename.append(img)
         img = keras.utils.load_img(img, target_size=input_size)
         img = keras.utils.img_to_array(img)
         img = np.array([img])
         proba = model.predict(img)
         pred = class_names[np.argmax(proba)]
         predictions.append(pred)
-        _, label = os.path.split(path)
-        labels.append(label)
 
-    return predictions, labels
+    return filename, predictions

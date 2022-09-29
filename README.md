@@ -7,11 +7,15 @@ The data has been subseted from a Kaggle similar (and much bigger) dataset to a 
 
 Pleasure be sure you have all the dependencies needed by creating and activating the required environment from the .yaml file.
 
-Use:
+Use the following command in the terminal from the src of the repo:
 
-conda env create --name NAME --file environment.yaml
+conda env create --file environment.yaml
 
-where NAME is the name for your new env, and the file points to the environment.yaml file provided.
+That creates the required environment from environment.yaml (provided).
+
+Then:
+
+conda activa rd_env
 
 ## TRAINNING
 
