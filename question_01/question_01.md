@@ -37,4 +37,6 @@ repo
 ---------- real
 ---------- fake
 
-The .zip file for the obtained subset will be sent by email.
+The .zip file for the obtained subset will be sent by email or can downloaded from here:
+
+https://drive.google.com/file/d/1Cro-Ssq9Xoi4-7khmItrRtR0Y2_jIwHq/view?usp=sharing
