@@ -22,6 +22,10 @@ conda activa rd_env
 In question_01, there is a notebook not made to be RUN but to explain the simple subsetting process.
 The "data" folder, should contain the subset folder (provided by link and mail) as well as the rd_test_dataset folder (from the provided .zip).
 
+Link for subset:
+
+https://drive.google.com/file/d/1Cro-Ssq9Xoi4-7khmItrRtR0Y2_jIwHq/view?usp=sharing
+
 REPO
 --- data
 ------ subset
