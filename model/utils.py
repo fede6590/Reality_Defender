@@ -2,6 +2,7 @@ import os
 import yaml
 from tensorflow import keras
 import numpy as np
+from PIL import Image
 
 def validate_config(config):
     """
@@ -105,17 +106,19 @@ def predict_from_folder(folder, model, input_size, class_names):
     -------
     predictions, labels : tuple
         It will return two lists:
+            - filename: path and name of every images that enter the model.
             - predictions: having the list of predicted labels by the model.
-            - labels: is the list of the true labels, we will use them to
-                      compare against model predictions.
     """
     filename = []
     predictions = []
 
     for path, img in  walkdir(folder):
-        img = os.path.join(path, img)
         filename.append(img)
-        img = keras.utils.load_img(img, target_size=input_size)
+        img = os.path.join(path, img)
+        # img = keras.utils.load_img(img, target_size=input_size)
+        # img = keras.utils.load_img(img)
+        img = Image.open(img)
+        img = img.convert('RGB')
         img = keras.utils.img_to_array(img)
         img = np.array([img])
         proba = model.predict(img)
