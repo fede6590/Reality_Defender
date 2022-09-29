@@ -1,7 +1,7 @@
 seed: 21
 
 data:
-    directory: "/data/train"
+    directory: "data/subset"
     labels: "inferred"
     label_mode: "categorical"
     validation_split: 0.2

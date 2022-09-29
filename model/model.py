@@ -1,4 +1,4 @@
-from model.data_aug import create_data_aug_layer
+from data_aug import create_data_aug_layer
 
 import tensorflow as tf
 from tensorflow import keras

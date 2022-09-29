@@ -8,8 +8,8 @@ import argparse
 import tensorflow as tf
 from tensorflow import keras
 
-from model import model
-from model import utils
+import model
+import utils
 
 # Prevent tensorflow to allocate the entire GPU
 # https://www.tensorflow.org/api_docs/python/tf/config/experimental/set_memory_growth
