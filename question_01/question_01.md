@@ -9,8 +9,14 @@
 ## b. How you went about collecting the data.
 
 First of all, I start searching for available data that might be usefull for this assignment.
-1) Kaggle dataset with 70k real faces and 1M fake faces generated with StyleGAN (https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces).
-2) I also developed a small python script to download random fake generated faces from https://thispersondoesnotexist.com/. The same amount as the real faces downloaded from this dataset https://github.com/NVlabs/ffhq-dataset.
+I found a Kaggle dataset with 70k real faces and 1M fake faces generated with StyleGAN (https://www.kaggle.com/datasets/xhlulu/140k-real-and-fake-faces). Instead of building the dataset on my own and take the risk of high bias, I subset this dataset using:
+* 50 real images from train
+* 50 fake images from train
+* 10 real images from test
+* 10 fake images from test
+* 10 real images from valid
+* 10 fake images from valid
+
 
 ## c. Besides fake/real labels, what other labels would you consider? Explain a simple method to sample a uniform dataset in the i.i.d sense, given the labels.
 
@@ -21,3 +27,14 @@ As I said before, the dataset would ideally have to be balanced in certain facia
 Pandas.
 
 ## e. Please share your mini-dataset as a zip file.
+
+The subset has to be extract in a folder named data at the source of the repository. 
+A notebook is available in question_01 folder (data_sampling.ipynb) to see the basic process of subsetting the original dataset.
+
+repo
+--- data
+------ subset
+---------- real
+---------- fake
+
+The .zip file for the dataset will be sent by email but it can also be downloaded here:

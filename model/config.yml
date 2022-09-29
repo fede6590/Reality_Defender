@@ -2,20 +2,21 @@ seed: 21
 
 data:
     directory: "data/subset"
+    test_dataset: "../data/rd_test_dataset"
     labels: "inferred"
     label_mode: "categorical"
     validation_split: 0.2
     image_size: [256, 256]
-    batch_size: 10
+    batch_size: 20
 
 model:
     weights: "imagenet"
     input_shape: [256, 256, 3]
     classes: 2
-    dropout_rate: 0.1
+    # dropout_rate: 0.1
     data_aug_layer:
-        random_flip:
-            mode: "horizontal"
+        # random_flip:
+        #     mode: "horizontal"
         # random_rotation:
         #     factor: 0.1
         #     fill_mode: 'constant'
@@ -23,8 +24,8 @@ model:
         # random_zoom:
         #     height_factor: 0.1
         #     width_factor: 0.1
-        random_contrast:
-            factor: 0.1
+        # random_contrast:
+        #     factor: 0.1
     regularizer: 'l2' # l1 or l2
     trainable: True
 
@@ -36,14 +37,12 @@ compile:
             amsgrad: True
 
     loss: "binary_crossentropy"
-    # metrics: ["accuracy"]
     metrics: ["categorical_accuracy"]
 
 fit:
-    epochs: 10
+    epochs: 30
     callbacks:
-        model_checkpoint: # hd or hdf5: https://www.tensorflow.org/tutorials/keras/save_and_load
-            # filepath: "/home/app/src/experiments/files/exp_000/model.{epoch:02d}-{val_loss:.4f}.h5"
+        model_checkpoint:
             filepath: "model/weights/model.better.h5"
             save_best_only: True
         early_stopping: 
