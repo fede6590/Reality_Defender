@@ -1,0 +1,54 @@
+seed: 21
+
+data:
+    directory: "/data/train"
+    labels: "inferred"
+    label_mode: "categorical"
+    validation_split: 0.2
+    image_size: [256, 256]
+    batch_size: 10
+
+model:
+    weights: "imagenet"
+    input_shape: [256, 256, 3]
+    classes: 2
+    dropout_rate: 0.1
+    data_aug_layer:
+        random_flip:
+            mode: "horizontal"
+        # random_rotation:
+        #     factor: 0.1
+        #     fill_mode: 'constant'
+        #     fill_value: 125
+        # random_zoom:
+        #     height_factor: 0.1
+        #     width_factor: 0.1
+        random_contrast:
+            factor: 0.1
+    regularizer: 'l2' # l1 or l2
+    trainable: True
+
+compile:
+    optimizer:
+        adam:
+            learning_rate: 0.005
+            epsilon: 0.05
+            amsgrad: True
+
+    loss: "binary_crossentropy"
+    # metrics: ["accuracy"]
+    metrics: ["categorical_accuracy"]
+
+fit:
+    epochs: 10
+    callbacks:
+        model_checkpoint: # hd or hdf5: https://www.tensorflow.org/tutorials/keras/save_and_load
+            # filepath: "/home/app/src/experiments/files/exp_000/model.{epoch:02d}-{val_loss:.4f}.h5"
+            filepath: "/model/weights/model.better.h5"
+            save_best_only: True
+        early_stopping: 
+            monitor: 'val_loss'
+            patience: 2
+            restore_best_weights: True
+        tensor_board:
+            log_dir: "/model/weights/logs"
