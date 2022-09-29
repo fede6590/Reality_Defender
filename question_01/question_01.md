@@ -37,4 +37,4 @@ repo
 ---------- real
 ---------- fake
 
-The .zip file for the dataset will be sent by email but it can also be downloaded here:
+The .zip file for the obtained subset will be sent by email.

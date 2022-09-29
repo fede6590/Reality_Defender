@@ -12,7 +12,8 @@ In model/config.yml, we can see all the implementation and settings customizable
 
 ## c. Please test accuracy on the attached, rd_test_dataset zipped face images, and save the output to a .csv file.
 
-https://drive.google.com/file/d/1jcdByJPkAGq9JsgsdLqeyLwI4Yl6plOf/view?
-usp=sharing
+https://drive.google.com/file/d/1jcdByJPkAGq9JsgsdLqeyLwI4Yl6plOf/view?usp=sharing
 
 ## d. Explain your accuracy scores, and add analysis based on what you proposal in Q2.
+
+Like said in the Q2, 91% accuracy is good (for a small MobileNetV2 model at least), but 2 out of 22 mistakes can sometimes be a real problem (as mentioned for security or health). There is then more balancing and improvement to do on the training dataset.

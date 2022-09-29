@@ -9,5 +9,3 @@
 * The first thing I will do in order to confirm the good results in accuracy, it's to contrast with the F1 Score wich takes in count the Recall of the model. This way, we give more importance to False Negatives, wich are mucho more "dangerous" if those predictions lead to health or security related decisions for example.
 
 * Besides that, there is always the problem with the dataset: in a way, there is always room for improvement and trying to balance every feature to evoiding bias.
-
-* After getting optimum results for the model to classify if a face is real or fake, it can be time to re train the generator (that I am not sure yet).
