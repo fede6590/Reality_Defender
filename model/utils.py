@@ -115,8 +115,6 @@ def predict_from_folder(folder, model, input_size, class_names):
     for path, img in  walkdir(folder):
         filename.append(img)
         img = os.path.join(path, img)
-        # img = keras.utils.load_img(img, target_size=input_size)
-        # img = keras.utils.load_img(img)
         img = Image.open(img)
         img = img.convert('RGB')
         img = keras.utils.img_to_array(img)
