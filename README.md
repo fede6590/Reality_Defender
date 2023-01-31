@@ -1,4 +1,4 @@
-# RD-Data-Takehome-Federico-Ferreyra
+# Reality Defender
 
 MobileNetV2 model used for Real VS. Fake faces classification.
 The data has been subseted from a Kaggle similar (and much bigger) dataset to a 140 images subset: 70 real faces and 70 fakes faces, placed in 2 two different folders (named real and fake).
